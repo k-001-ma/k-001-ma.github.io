@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>二师兄</title>
+    <link>https://k-001-ma.github.io/</link>
+    <description>Recent content on 二师兄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Jan 2021 18:37:26 +0800</lastBuildDate><atom:link href="https://k-001-ma.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog1</title>
+      <link>https://k-001-ma.github.io/2021/01/blog1/</link>
+      <pubDate>Wed, 13 Jan 2021 18:37:26 +0800</pubDate>
+      
+      <guid>https://k-001-ma.github.io/2021/01/blog1/</guid>
+      <description>&lt;p&gt;#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
