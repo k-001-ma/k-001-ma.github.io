@@ -6,14 +6,23 @@
     <description>Recent content in category on 二师兄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Jan 2021 18:37:26 +0800</lastBuildDate><atom:link href="https://k-001-ma.github.io/categories/category/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jan 2021 20:02:28 +0800</lastBuildDate><atom:link href="https://k-001-ma.github.io/categories/category/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blog1</title>
-      <link>https://k-001-ma.github.io/2021/01/blog1/</link>
+      <title>Blog</title>
+      <link>https://k-001-ma.github.io/2021/01/blog/</link>
+      <pubDate>Wed, 13 Jan 2021 20:02:28 +0800</pubDate>
+      
+      <guid>https://k-001-ma.github.io/2021/01/blog/</guid>
+      <description>&lt;p&gt;无敌C++&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>博客测试</title>
+      <link>https://k-001-ma.github.io/2021/01/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Wed, 13 Jan 2021 18:37:26 +0800</pubDate>
       
-      <guid>https://k-001-ma.github.io/2021/01/blog1/</guid>
-      <description>&lt;p&gt;#缩略显示的梗概，这里把注释删去，写成文章的简介或者梗概，在首页时候可以只显示梗概&lt;/p&gt;</description>
+      <guid>https://k-001-ma.github.io/2021/01/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</guid>
+      <description>&lt;p&gt;大话数据结构，请君入瓮&lt;/p&gt;</description>
     </item>
     
   </channel>

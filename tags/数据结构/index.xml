@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>二师兄</title>
-    <link>https://k-001-ma.github.io/</link>
-    <description>Recent content on 二师兄</description>
+    <title>数据结构 on 二师兄</title>
+    <link>https://k-001-ma.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on 二师兄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Jan 2021 20:02:28 +0800</lastBuildDate><atom:link href="https://k-001-ma.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Blog</title>
-      <link>https://k-001-ma.github.io/2021/01/blog/</link>
-      <pubDate>Wed, 13 Jan 2021 20:02:28 +0800</pubDate>
-      
-      <guid>https://k-001-ma.github.io/2021/01/blog/</guid>
-      <description>&lt;p&gt;无敌C++&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Wed, 13 Jan 2021 18:37:26 +0800</lastBuildDate><atom:link href="https://k-001-ma.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>博客测试</title>
       <link>https://k-001-ma.github.io/2021/01/%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</link>
