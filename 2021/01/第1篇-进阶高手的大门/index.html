@@ -8,85 +8,161 @@
 <meta name="generator" content="Hugo 0.80.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="二师兄">
 <meta name="keywords" content="数据结构">
-<meta name="description" content="TOC
-目标
-创建可复用的数据结构软件库
-分析并优化C&#43;&#43;中创建的使用类
+<meta name="description" content="@TOC
+问题
+他问：为什么会有各种各样的程序存在？
+她问：程序的本质是什么？
+答：程序是为了解决实际问题而存在的，本质而言，程序是解决问题步骤的描述；
 
-使用技术
-C&#43;&#43;面向对象技术
-C&#43;&#43;模板技术
-C&#43;&#43;异常处理技术
+来进一步理解实际问题！
+确认问题的类型，如：数值计算，求最小值个数
+确认求解步骤，如：打开文件，读数据，关闭文件，计算
 
-继续战斗，为了世界和平
-&gt; 来自狄泰软件学院的课程总结
+如何判断问题求解步骤的好坏？
+用尽量少的时间解决问题
+用尽量少的步骤解决问题
+用尽量少的内存解决问题
+优秀的开发者追求高质量代码！
 
-== 感谢关注，持续高速更新中······ ==
+数据结构研究范围
+非数值计算类型的程序问题
+数据简单额组织和操作方式
+数据的逻辑结构和存储结构
 
-继续战斗，为了世界和平！">
+最最最经典的公式
+程序 = 数据结构 &#43; 算法
+（对于数据结构和算法的研究，语言不重要，重要的是思想）
+
+小结
+程序是为了解决实际问题而存在的
+针对同一个问题可以有多钟解决方案
+专业程序员应该尽量追求高质量的程序
+数据结构主要研究非数值计算问题
+
+==感谢关注，持续高速更新中······==
 
 
-<meta property="og:description" content="TOC
-目标
-创建可复用的数据结构软件库
-分析并优化C&#43;&#43;中创建的使用类
+进阶高手的大门！！！">
 
-使用技术
-C&#43;&#43;面向对象技术
-C&#43;&#43;模板技术
-C&#43;&#43;异常处理技术
 
-继续战斗，为了世界和平
-&gt; 来自狄泰软件学院的课程总结
+<meta property="og:description" content="@TOC
+问题
+他问：为什么会有各种各样的程序存在？
+她问：程序的本质是什么？
+答：程序是为了解决实际问题而存在的，本质而言，程序是解决问题步骤的描述；
 
-== 感谢关注，持续高速更新中······ ==
+来进一步理解实际问题！
+确认问题的类型，如：数值计算，求最小值个数
+确认求解步骤，如：打开文件，读数据，关闭文件，计算
 
-继续战斗，为了世界和平！">
+如何判断问题求解步骤的好坏？
+用尽量少的时间解决问题
+用尽量少的步骤解决问题
+用尽量少的内存解决问题
+优秀的开发者追求高质量代码！
+
+数据结构研究范围
+非数值计算类型的程序问题
+数据简单额组织和操作方式
+数据的逻辑结构和存储结构
+
+最最最经典的公式
+程序 = 数据结构 &#43; 算法
+（对于数据结构和算法的研究，语言不重要，重要的是思想）
+
+小结
+程序是为了解决实际问题而存在的
+针对同一个问题可以有多钟解决方案
+专业程序员应该尽量追求高质量的程序
+数据结构主要研究非数值计算问题
+
+==感谢关注，持续高速更新中······==
+
+
+进阶高手的大门！！！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第0篇 启航，新的目标">
-<meta name="twitter:title" content="第0篇 启航，新的目标">
-<meta property="og:url" content="https://k-001-ma.github.io/2021/01/%E7%AC%AC0%E7%AF%87-%E5%90%AF%E8%88%AA%E6%96%B0%E7%9A%84%E7%9B%AE%E6%A0%87/">
-<meta property="twitter:url" content="https://k-001-ma.github.io/2021/01/%E7%AC%AC0%E7%AF%87-%E5%90%AF%E8%88%AA%E6%96%B0%E7%9A%84%E7%9B%AE%E6%A0%87/">
+<meta property="og:title" content="第1篇 进阶高手的大门">
+<meta name="twitter:title" content="第1篇 进阶高手的大门">
+<meta property="og:url" content="https://k-001-ma.github.io/2021/01/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8/">
+<meta property="twitter:url" content="https://k-001-ma.github.io/2021/01/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8/">
 <meta property="og:site_name" content="二师兄">
-<meta property="og:description" content="TOC
-目标
-创建可复用的数据结构软件库
-分析并优化C&#43;&#43;中创建的使用类
+<meta property="og:description" content="@TOC
+问题
+他问：为什么会有各种各样的程序存在？
+她问：程序的本质是什么？
+答：程序是为了解决实际问题而存在的，本质而言，程序是解决问题步骤的描述；
 
-使用技术
-C&#43;&#43;面向对象技术
-C&#43;&#43;模板技术
-C&#43;&#43;异常处理技术
+来进一步理解实际问题！
+确认问题的类型，如：数值计算，求最小值个数
+确认求解步骤，如：打开文件，读数据，关闭文件，计算
 
-继续战斗，为了世界和平
-&gt; 来自狄泰软件学院的课程总结
+如何判断问题求解步骤的好坏？
+用尽量少的时间解决问题
+用尽量少的步骤解决问题
+用尽量少的内存解决问题
+优秀的开发者追求高质量代码！
 
-== 感谢关注，持续高速更新中······ ==
+数据结构研究范围
+非数值计算类型的程序问题
+数据简单额组织和操作方式
+数据的逻辑结构和存储结构
 
-继续战斗，为了世界和平！">
-<meta name="twitter:description" content="TOC
-目标
-创建可复用的数据结构软件库
-分析并优化C&#43;&#43;中创建的使用类
+最最最经典的公式
+程序 = 数据结构 &#43; 算法
+（对于数据结构和算法的研究，语言不重要，重要的是思想）
 
-使用技术
-C&#43;&#43;面向对象技术
-C&#43;&#43;模板技术
-C&#43;&#43;异常处理技术
+小结
+程序是为了解决实际问题而存在的
+针对同一个问题可以有多钟解决方案
+专业程序员应该尽量追求高质量的程序
+数据结构主要研究非数值计算问题
 
-继续战斗，为了世界和平
-&gt; 来自狄泰软件学院的课程总结
+==感谢关注，持续高速更新中······==
 
-== 感谢关注，持续高速更新中······ ==
 
-继续战斗，为了世界和平！">
+进阶高手的大门！！！">
+<meta name="twitter:description" content="@TOC
+问题
+他问：为什么会有各种各样的程序存在？
+她问：程序的本质是什么？
+答：程序是为了解决实际问题而存在的，本质而言，程序是解决问题步骤的描述；
+
+来进一步理解实际问题！
+确认问题的类型，如：数值计算，求最小值个数
+确认求解步骤，如：打开文件，读数据，关闭文件，计算
+
+如何判断问题求解步骤的好坏？
+用尽量少的时间解决问题
+用尽量少的步骤解决问题
+用尽量少的内存解决问题
+优秀的开发者追求高质量代码！
+
+数据结构研究范围
+非数值计算类型的程序问题
+数据简单额组织和操作方式
+数据的逻辑结构和存储结构
+
+最最最经典的公式
+程序 = 数据结构 &#43; 算法
+（对于数据结构和算法的研究，语言不重要，重要的是思想）
+
+小结
+程序是为了解决实际问题而存在的
+针对同一个问题可以有多钟解决方案
+专业程序员应该尽量追求高质量的程序
+数据结构主要研究非数值计算问题
+
+==感谢关注，持续高速更新中······==
+
+
+进阶高手的大门！！！">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2021-01-21T09:56:54">
+    <meta property="article:published_time" content="2021-01-21T11:36:55">
   
   
-    <meta property="article:modified_time" content="2021-01-21T09:56:54">
+    <meta property="article:modified_time" content="2021-01-21T11:36:55">
   
   
   
@@ -117,14 +193,14 @@ C&#43;&#43;异常处理技术
   <meta property="twitter:image" content="https://k-001-ma.github.io/cba.jpg">
 
 
-    <title>第0篇 启航，新的目标</title>
+    <title>第1篇 进阶高手的大门</title>
 
     <link rel="icon" href="https://k-001-ma.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://k-001-ma.github.io/2021/01/%E7%AC%AC0%E7%AF%87-%E5%90%AF%E8%88%AA%E6%96%B0%E7%9A%84%E7%9B%AE%E6%A0%87/">
+    <link rel="canonical" href="https://k-001-ma.github.io/2021/01/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -284,13 +360,13 @@ C&#43;&#43;异常处理技术
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      第0篇 启航，新的目标
+      第1篇 进阶高手的大门
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-01-21T09:56:54&#43;08:00">
+      <time itemprop="datePublished" datetime="2021-01-21T11:36:55&#43;08:00">
         
   一月 21, 2021
 
@@ -311,22 +387,41 @@ C&#43;&#43;异常处理技术
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
-<h1 id="目标">目标</h1>
-<pre><code>创建可复用的数据结构软件库
-分析并优化C++中创建的使用类
+              <p>@<a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
+<h1 id="问题">问题</h1>
+<pre><code>他问：为什么会有各种各样的程序存在？
+她问：程序的本质是什么？
+答：程序是为了解决实际问题而存在的，本质而言，程序是解决问题步骤的描述；
 </code></pre>
-<h1 id="使用技术">使用技术</h1>
-<pre><code>C++面向对象技术
-C++模板技术
-C++异常处理技术
+<h1 id="来进一步理解实际问题">来进一步理解实际问题！</h1>
+<pre><code>确认问题的类型，如：数值计算，求最小值个数
+确认求解步骤，如：打开文件，读数据，关闭文件，计算
 </code></pre>
-<h1 id="继续战斗为了世界和平">继续战斗，为了世界和平</h1>
-<pre><code>&gt; 来自狄泰软件学院的课程总结
+<h1 id="如何判断问题求解步骤的好坏">如何判断问题求解步骤的好坏？</h1>
+<pre><code>用尽量少的时间解决问题
+用尽量少的步骤解决问题
+用尽量少的内存解决问题
+优秀的开发者追求高质量代码！
 </code></pre>
-<p>== 感谢关注，持续高速更新中······ ==</p>
+<h1 id="数据结构研究范围">数据结构研究范围</h1>
+<pre><code>非数值计算类型的程序问题
+数据简单额组织和操作方式
+数据的逻辑结构和存储结构
+</code></pre>
+<h1 id="最最最经典的公式">最最最经典的公式</h1>
+<pre><code>程序 = 数据结构 + 算法
+（对于数据结构和算法的研究，语言不重要，重要的是思想）
+</code></pre>
+<h1 id="小结">小结</h1>
+<pre><code>程序是为了解决实际问题而存在的
+针对同一个问题可以有多钟解决方案
+专业程序员应该尽量追求高质量的程序
+数据结构主要研究非数值计算问题
+</code></pre>
+<p>==感谢关注，持续高速更新中······==</p>
 <hr>
-<p>继续战斗，为了世界和平！</p>
+<hr>
+<p>进阶高手的大门！！！</p>
 <!-- raw HTML omitted -->
               
             </div>
@@ -345,7 +440,7 @@ C++异常处理技术
                 
               
             
-              <span id="/2021/01/%E7%AC%AC0%E7%AF%87-%E5%90%AF%E8%88%AA%E6%96%B0%E7%9A%84%E7%9B%AE%E6%A0%87/" class="leancloud_visitors" data-flag-title="第0篇 启航，新的目标">
+              <span id="/2021/01/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8/" class="leancloud_visitors" data-flag-title="第1篇 进阶高手的大门">
                 <span class="post-meta-item-text">文章阅读量 </span>
                 <span class="leancloud-visitors-count">1000000</span>
                 <p></p>
@@ -372,7 +467,7 @@ C++异常处理技术
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://k-001-ma.github.io/2021/01/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8/" data-tooltip="第1篇 进阶高手的大门">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -380,7 +475,7 @@ C++异常处理技术
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://k-001-ma.github.io/2021/01/%E7%AC%AC0%E7%AF%87-%E5%90%AF%E8%88%AA%E6%96%B0%E7%9A%84%E7%9B%AE%E6%A0%87/" data-tooltip="第0篇 启航，新的目标">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -440,7 +535,7 @@ C++异常处理技术
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://k-001-ma.github.io/2021/01/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8/" data-tooltip="第1篇 进阶高手的大门">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -448,7 +543,7 @@ C++异常处理技术
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://k-001-ma.github.io/2021/01/%E7%AC%AC0%E7%AF%87-%E5%90%AF%E8%88%AA%E6%96%B0%E7%9A%84%E7%9B%AE%E6%A0%87/" data-tooltip="第0篇 启航，新的目标">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -584,9 +679,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/k-001-ma.github.io\/2021\/01\/%E7%AC%AC0%E7%AF%87-%E5%90%AF%E8%88%AA%E6%96%B0%E7%9A%84%E7%9B%AE%E6%A0%87\/';
+          this.page.url = 'https:\/\/k-001-ma.github.io\/2021\/01\/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8\/';
           
-            this.page.identifier = '\/2021\/01\/%E7%AC%AC0%E7%AF%87-%E5%90%AF%E8%88%AA%E6%96%B0%E7%9A%84%E7%9B%AE%E6%A0%87\/'
+            this.page.identifier = '\/2021\/01\/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8\/'
           
         };
         (function() {
