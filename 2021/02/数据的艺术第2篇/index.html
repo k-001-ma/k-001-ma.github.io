@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.80.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="二师兄">
+<meta name="keywords" content="数据结构">
+<meta name="description" content="
+醉卧沙场君莫笑，古来征战几人回？
+
+@[toc]
+GUI程序开发概述
+现代操作系统支持GUI界面
+    -	现代操作系统提供原生 SDK 支持GUI程序开发 
+    -	GUI 程序开发是现代操作系统上的主流技术
+    -	不同操作系统上的 GUI 开发原理相同
+    -	不同操作系统上的 GUI SDK 不同
+
+GUI程序开发原理
+    -	GUI 程序在运行时会创建一个消息队列
+    -	系统内核将用户操作翻译成对应的程序消息
+    -	程序在运行中需要实时处理队列中的消息
+    -	当队列中没有消息时，程序处于停滞状态
+    -	不同操作系统支持相同的GUI开发原理
+
+
+用户操作 &ndash;&gt; 操作系统内核 &ndash;&gt; 程序消息 &ndash;&gt; GUI应用
+
+GUI程序开发
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+
+经典GUI程序开发模式
+可视化界面开发（画出界面，开发环境自动生成对应程序代码）
+&#43;
+消息映射（程序中将具体消息映射到指定函数，当消息触发时，函数被调用）
+
+#define STYLE_NAME    L&quot;MainForm&quot;  // 在Windows中L后跟字符串，指的是名字所使用的的字符是宽字符，不再是ASCII码，是utf8或者unicode这样的编码
+
+GUI程序开发实例
+    -	多数操作系统以C函数的方式提供 GUI SDK
+    -	以 Windows 操作系统为例：
+    -	函数名								功能
+    -	RegisterClass						向系统注册 GUI 窗口式样
+    -	CreateWinsow						创建窗口或者窗口元素
+    -	ShowWindow					 		在屏幕上显示创建好的窗口
+    -	UpdateWindow						刷新屏幕上的窗口
+    -	GetMessage							获取程序消息队列中得消息
+    -	TranslateMessage				    翻译系统消息
+    -	 DispatchMwssge					    将消息发送到窗口处理函数
+
+总结：
+现代操作系统提供原生 SDK 支持 GUI程序开发
+不同操作系统上的 GUI SDK 不同
+不同操作系统上的 GUI 开发原理相同
+GUI程序开发包括
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+
+==感谢关注，文章持续高速更新中……==
+
+
+醉卧沙场君莫笑，古来征战几人回？
+">
+
+
+<meta property="og:description" content="
+醉卧沙场君莫笑，古来征战几人回？
+
+@[toc]
+GUI程序开发概述
+现代操作系统支持GUI界面
+    -	现代操作系统提供原生 SDK 支持GUI程序开发 
+    -	GUI 程序开发是现代操作系统上的主流技术
+    -	不同操作系统上的 GUI 开发原理相同
+    -	不同操作系统上的 GUI SDK 不同
+
+GUI程序开发原理
+    -	GUI 程序在运行时会创建一个消息队列
+    -	系统内核将用户操作翻译成对应的程序消息
+    -	程序在运行中需要实时处理队列中的消息
+    -	当队列中没有消息时，程序处于停滞状态
+    -	不同操作系统支持相同的GUI开发原理
+
+
+用户操作 &ndash;&gt; 操作系统内核 &ndash;&gt; 程序消息 &ndash;&gt; GUI应用
+
+GUI程序开发
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+
+经典GUI程序开发模式
+可视化界面开发（画出界面，开发环境自动生成对应程序代码）
+&#43;
+消息映射（程序中将具体消息映射到指定函数，当消息触发时，函数被调用）
+
+#define STYLE_NAME    L&quot;MainForm&quot;  // 在Windows中L后跟字符串，指的是名字所使用的的字符是宽字符，不再是ASCII码，是utf8或者unicode这样的编码
+
+GUI程序开发实例
+    -	多数操作系统以C函数的方式提供 GUI SDK
+    -	以 Windows 操作系统为例：
+    -	函数名								功能
+    -	RegisterClass						向系统注册 GUI 窗口式样
+    -	CreateWinsow						创建窗口或者窗口元素
+    -	ShowWindow					 		在屏幕上显示创建好的窗口
+    -	UpdateWindow						刷新屏幕上的窗口
+    -	GetMessage							获取程序消息队列中得消息
+    -	TranslateMessage				    翻译系统消息
+    -	 DispatchMwssge					    将消息发送到窗口处理函数
+
+总结：
+现代操作系统提供原生 SDK 支持 GUI程序开发
+不同操作系统上的 GUI SDK 不同
+不同操作系统上的 GUI 开发原理相同
+GUI程序开发包括
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+
+==感谢关注，文章持续高速更新中……==
+
+
+醉卧沙场君莫笑，古来征战几人回？
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据的艺术第2篇">
+<meta name="twitter:title" content="数据的艺术第2篇">
+<meta property="og:url" content="https://k-001-ma.github.io/2021/02/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%AC2%E7%AF%87/">
+<meta property="twitter:url" content="https://k-001-ma.github.io/2021/02/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%AC2%E7%AF%87/">
+<meta property="og:site_name" content="二师兄">
+<meta property="og:description" content="
+醉卧沙场君莫笑，古来征战几人回？
+
+@[toc]
+GUI程序开发概述
+现代操作系统支持GUI界面
+    -	现代操作系统提供原生 SDK 支持GUI程序开发 
+    -	GUI 程序开发是现代操作系统上的主流技术
+    -	不同操作系统上的 GUI 开发原理相同
+    -	不同操作系统上的 GUI SDK 不同
+
+GUI程序开发原理
+    -	GUI 程序在运行时会创建一个消息队列
+    -	系统内核将用户操作翻译成对应的程序消息
+    -	程序在运行中需要实时处理队列中的消息
+    -	当队列中没有消息时，程序处于停滞状态
+    -	不同操作系统支持相同的GUI开发原理
+
+
+用户操作 &ndash;&gt; 操作系统内核 &ndash;&gt; 程序消息 &ndash;&gt; GUI应用
+
+GUI程序开发
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+
+经典GUI程序开发模式
+可视化界面开发（画出界面，开发环境自动生成对应程序代码）
+&#43;
+消息映射（程序中将具体消息映射到指定函数，当消息触发时，函数被调用）
+
+#define STYLE_NAME    L&quot;MainForm&quot;  // 在Windows中L后跟字符串，指的是名字所使用的的字符是宽字符，不再是ASCII码，是utf8或者unicode这样的编码
+
+GUI程序开发实例
+    -	多数操作系统以C函数的方式提供 GUI SDK
+    -	以 Windows 操作系统为例：
+    -	函数名								功能
+    -	RegisterClass						向系统注册 GUI 窗口式样
+    -	CreateWinsow						创建窗口或者窗口元素
+    -	ShowWindow					 		在屏幕上显示创建好的窗口
+    -	UpdateWindow						刷新屏幕上的窗口
+    -	GetMessage							获取程序消息队列中得消息
+    -	TranslateMessage				    翻译系统消息
+    -	 DispatchMwssge					    将消息发送到窗口处理函数
+
+总结：
+现代操作系统提供原生 SDK 支持 GUI程序开发
+不同操作系统上的 GUI SDK 不同
+不同操作系统上的 GUI 开发原理相同
+GUI程序开发包括
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+
+==感谢关注，文章持续高速更新中……==
+
+
+醉卧沙场君莫笑，古来征战几人回？
+">
+<meta name="twitter:description" content="
+醉卧沙场君莫笑，古来征战几人回？
+
+@[toc]
+GUI程序开发概述
+现代操作系统支持GUI界面
+    -	现代操作系统提供原生 SDK 支持GUI程序开发 
+    -	GUI 程序开发是现代操作系统上的主流技术
+    -	不同操作系统上的 GUI 开发原理相同
+    -	不同操作系统上的 GUI SDK 不同
+
+GUI程序开发原理
+    -	GUI 程序在运行时会创建一个消息队列
+    -	系统内核将用户操作翻译成对应的程序消息
+    -	程序在运行中需要实时处理队列中的消息
+    -	当队列中没有消息时，程序处于停滞状态
+    -	不同操作系统支持相同的GUI开发原理
+
+
+用户操作 &ndash;&gt; 操作系统内核 &ndash;&gt; 程序消息 &ndash;&gt; GUI应用
+
+GUI程序开发
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+
+经典GUI程序开发模式
+可视化界面开发（画出界面，开发环境自动生成对应程序代码）
+&#43;
+消息映射（程序中将具体消息映射到指定函数，当消息触发时，函数被调用）
+
+#define STYLE_NAME    L&quot;MainForm&quot;  // 在Windows中L后跟字符串，指的是名字所使用的的字符是宽字符，不再是ASCII码，是utf8或者unicode这样的编码
+
+GUI程序开发实例
+    -	多数操作系统以C函数的方式提供 GUI SDK
+    -	以 Windows 操作系统为例：
+    -	函数名								功能
+    -	RegisterClass						向系统注册 GUI 窗口式样
+    -	CreateWinsow						创建窗口或者窗口元素
+    -	ShowWindow					 		在屏幕上显示创建好的窗口
+    -	UpdateWindow						刷新屏幕上的窗口
+    -	GetMessage							获取程序消息队列中得消息
+    -	TranslateMessage				    翻译系统消息
+    -	 DispatchMwssge					    将消息发送到窗口处理函数
+
+总结：
+现代操作系统提供原生 SDK 支持 GUI程序开发
+不同操作系统上的 GUI SDK 不同
+不同操作系统上的 GUI 开发原理相同
+GUI程序开发包括
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+
+==感谢关注，文章持续高速更新中……==
+
+
+醉卧沙场君莫笑，古来征战几人回？
+">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2021-02-13T22:07:37">
+  
+  
+    <meta property="article:modified_time" content="2021-02-13T22:07:37">
+  
+  
+  
+    
+      <meta property="article:section" content="数据结构">
+    
+  
+  
+    
+      <meta property="article:tag" content="数据结构">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://k-001-ma.github.io/cba.jpg">
+  <meta property="twitter:image" content="https://k-001-ma.github.io/cba.jpg">
+
+
+    <title>数据的艺术第2篇</title>
+
+    <link rel="icon" href="https://k-001-ma.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://k-001-ma.github.io/2021/02/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%AC2%E7%AF%87/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://k-001-ma.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://k-001-ma.github.io/">二师兄</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://k-001-ma.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://k-001-ma.github.io/cba.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://k-001-ma.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://k-001-ma.github.io/cba.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">二师兄</h4>
+        
+          <h5 class="sidebar-profile-bio">世无粹白之狐，集腋成裘！</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://k-001-ma.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://k-001-ma.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">类别</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://k-001-ma.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://k-001-ma.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://k-001-ma.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/k-001-ma" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://blog.csdn.net/dashuu" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">CSDN</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://k-001-ma.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      数据的艺术第2篇
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-02-13T22:07:37&#43;08:00">
+        
+  二月 13, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://k-001-ma.github.io/categories/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">数据结构</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <blockquote>
+<p>醉卧沙场君莫笑，古来征战几人回？</p>
+</blockquote>
+<p>@[toc]</p>
+<h1 id="gui程序开发概述">GUI程序开发概述</h1>
+<h2 id="现代操作系统支持gui界面">现代操作系统支持GUI界面</h2>
+<pre><code>    -	现代操作系统提供原生 SDK 支持GUI程序开发 
+    -	GUI 程序开发是现代操作系统上的主流技术
+    -	不同操作系统上的 GUI 开发原理相同
+    -	不同操作系统上的 GUI SDK 不同
+</code></pre>
+<h1 id="gui程序开发原理">GUI程序开发原理</h1>
+<pre><code>    -	GUI 程序在运行时会创建一个消息队列
+    -	系统内核将用户操作翻译成对应的程序消息
+    -	程序在运行中需要实时处理队列中的消息
+    -	当队列中没有消息时，程序处于停滞状态
+    -	不同操作系统支持相同的GUI开发原理
+</code></pre>
+<blockquote>
+<p>用户操作 &ndash;&gt; 操作系统内核 &ndash;&gt; 程序消息 &ndash;&gt; GUI应用</p>
+</blockquote>
+<h2 id="gui程序开发">GUI程序开发</h2>
+<pre><code>    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#960050;background-color:#1e0010">经典</span>GUI程序开发模式
+<span style="color:#960050;background-color:#1e0010">可视化界面开发（画出界面，开发环境自动生成对应程序代码）</span>
+<span style="color:#f92672">+</span>
+<span style="color:#960050;background-color:#1e0010">消息映射（程序中将具体消息映射到指定函数，当消息触发时，函数被调用）</span>
+</code></pre></div><blockquote>
+<p>#define STYLE_NAME    L&quot;MainForm&quot;  // 在Windows中L后跟字符串，指的是名字所使用的的字符是宽字符，不再是ASCII码，是utf8或者unicode这样的编码</p>
+</blockquote>
+<h1 id="gui程序开发实例">GUI程序开发实例</h1>
+<pre><code>    -	多数操作系统以C函数的方式提供 GUI SDK
+    -	以 Windows 操作系统为例：
+    -	函数名								功能
+    -	RegisterClass						向系统注册 GUI 窗口式样
+    -	CreateWinsow						创建窗口或者窗口元素
+    -	ShowWindow					 		在屏幕上显示创建好的窗口
+    -	UpdateWindow						刷新屏幕上的窗口
+    -	GetMessage							获取程序消息队列中得消息
+    -	TranslateMessage				    翻译系统消息
+    -	 DispatchMwssge					    将消息发送到窗口处理函数
+</code></pre>
+<h1 id="总结">总结：</h1>
+<pre><code>现代操作系统提供原生 SDK 支持 GUI程序开发
+不同操作系统上的 GUI SDK 不同
+不同操作系统上的 GUI 开发原理相同
+GUI程序开发包括
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+</code></pre>
+<p>==感谢关注，文章持续高速更新中……==</p>
+<hr>
+<blockquote>
+<p>醉卧沙场君莫笑，古来征战几人回？</p>
+</blockquote>
+<!-- raw HTML omitted -->
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://k-001-ma.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+
+                  </div>
+                
+              
+            
+              <span id="/2021/02/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%AC2%E7%AF%87/" class="leancloud_visitors" data-flag-title="数据的艺术第2篇">
+                <span class="post-meta-item-text">文章阅读量 </span>
+                <span class="leancloud-visitors-count">1000000</span>
+                <p></p>
+              </span>
+              <div id="vcomments"></div>
+              <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+              <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+              <script type="text/javascript">
+                new Valine({
+                  el: '#vcomments' ,
+                  appId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                  appKey: 'XXXXXXXXXXXXXXXXXXXXXXXX',
+                  notify: 'false',
+                  verify: '',
+                  avatar:'mp', 
+                  placeholder: '说点什么吧',
+                  visitor: 'true'
+                });
+              </script>
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://k-001-ma.github.io/2021/01/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8/" data-tooltip="第1篇 进阶高手的大门">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 二师兄. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://k-001-ma.github.io/2021/01/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8/" data-tooltip="第1篇 进阶高手的大门">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://k-001-ma.github.io/cba.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">二师兄</h4>
+    
+      <div id="about-card-bio">世无粹白之狐，集腋成裘！</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        摆地摊
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        河南
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://k-001-ma.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://k-001-ma.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://k-001-ma.github.io/js/clicklove.js"></script>
+  
+
+  
+    <script src="https://k-001-ma.github.io/js/snow.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/k-001-ma.github.io\/2021\/02\/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%AC2%E7%AF%87\/';
+          
+            this.page.identifier = '\/2021\/02\/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%AC2%E7%AF%87\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

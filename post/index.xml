@@ -6,7 +6,72 @@
     <description>Recent content in Posts on 二师兄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jan 2021 11:36:55 +0800</lastBuildDate><atom:link href="https://k-001-ma.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Feb 2021 22:07:37 +0800</lastBuildDate><atom:link href="https://k-001-ma.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据的艺术第2篇</title>
+      <link>https://k-001-ma.github.io/2021/02/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%AC2%E7%AF%87/</link>
+      <pubDate>Sat, 13 Feb 2021 22:07:37 +0800</pubDate>
+      
+      <guid>https://k-001-ma.github.io/2021/02/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%89%BA%E6%9C%AF%E7%AC%AC2%E7%AF%87/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;醉卧沙场君莫笑，古来征战几人回？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;@[toc]&lt;/p&gt;
+&lt;h1 id=&#34;gui程序开发概述&#34;&gt;GUI程序开发概述&lt;/h1&gt;
+&lt;h2 id=&#34;现代操作系统支持gui界面&#34;&gt;现代操作系统支持GUI界面&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;    -	现代操作系统提供原生 SDK 支持GUI程序开发 
+    -	GUI 程序开发是现代操作系统上的主流技术
+    -	不同操作系统上的 GUI 开发原理相同
+    -	不同操作系统上的 GUI SDK 不同
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;gui程序开发原理&#34;&gt;GUI程序开发原理&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;    -	GUI 程序在运行时会创建一个消息队列
+    -	系统内核将用户操作翻译成对应的程序消息
+    -	程序在运行中需要实时处理队列中的消息
+    -	当队列中没有消息时，程序处于停滞状态
+    -	不同操作系统支持相同的GUI开发原理
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;用户操作 &amp;ndash;&amp;gt; 操作系统内核 &amp;ndash;&amp;gt; 程序消息 &amp;ndash;&amp;gt; GUI应用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;gui程序开发&#34;&gt;GUI程序开发&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;经典&lt;/span&gt;GUI程序开发模式
+&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;可视化界面开发（画出界面，开发环境自动生成对应程序代码）&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;消息映射（程序中将具体消息映射到指定函数，当消息触发时，函数被调用）&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;#define STYLE_NAME    L&amp;quot;MainForm&amp;quot;  // 在Windows中L后跟字符串，指的是名字所使用的的字符是宽字符，不再是ASCII码，是utf8或者unicode这样的编码&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;gui程序开发实例&#34;&gt;GUI程序开发实例&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;    -	多数操作系统以C函数的方式提供 GUI SDK
+    -	以 Windows 操作系统为例：
+    -	函数名								功能
+    -	RegisterClass						向系统注册 GUI 窗口式样
+    -	CreateWinsow						创建窗口或者窗口元素
+    -	ShowWindow					 		在屏幕上显示创建好的窗口
+    -	UpdateWindow						刷新屏幕上的窗口
+    -	GetMessage							获取程序消息队列中得消息
+    -	TranslateMessage				    翻译系统消息
+    -	 DispatchMwssge					    将消息发送到窗口处理函数
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;总结&#34;&gt;总结：&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;现代操作系统提供原生 SDK 支持 GUI程序开发
+不同操作系统上的 GUI SDK 不同
+不同操作系统上的 GUI 开发原理相同
+GUI程序开发包括
+    -	在代码中用程序创建窗口及窗口元素
+    -	在消息处理函数中根据程序消息做出不同响应
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;==感谢关注，文章持续高速更新中……==&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;醉卧沙场君莫笑，古来征战几人回？&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>第1篇 进阶高手的大门</title>
       <link>https://k-001-ma.github.io/2021/01/%E7%AC%AC1%E7%AF%87-%E8%BF%9B%E9%98%B6%E9%AB%98%E6%89%8B%E7%9A%84%E5%A4%A7%E9%97%A8/</link>
